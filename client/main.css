@@ -1,0 +1,126 @@
+body {
+  font-family: sans-serif;
+  background-color: #A9CCE3;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+#login-buttons {
+  display: block;
+}
+.hiddenContent {
+  display: none;
+}
+
+
+/* CSS added to textInput page */
+.StudentAllForms {
+  border: double red;
+}
+.input-Surname {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.input-Name {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.input-Grade {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.input-Team {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.textInput-submit-button{
+  width: 50%;
+}
+
+
+/* CSS added to teamInput page */
+.TeamAllForms {
+  border: double red;
+}
+.input-TeamName {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.input-TeamLeader {
+  width: 50%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.teamInput-submit-button{
+  width: 50%;
+}
+
+
+/* Every Table (without className) will be with centered text */
+Table {
+  text-align: center;
+}
+
+
+/* CSS added to Matches page */
+.dropdown-round {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+.dropdown-team1 {
+  float: left;
+  width: 35%;
+  padding: 5px;
+}
+.dropdown-team2 {
+  float: left;
+  width: 35%;
+  padding: 5px;
+}
+.dropdownbutton-team1 {
+  width: 100%;
+}
+.dropdownbutton-team2 {
+  width: 100%;
+}
+.input-TeamOne {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.input-TeamTwo {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.dropdown-submit-button {
+  width: 80%;
+}
