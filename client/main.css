@@ -56,10 +56,7 @@ body {
 }
 
 
-/* CSS added to teamInput page */
-.TeamAllForms {
-  border: double red;
-}
+
 .input-TeamName {
   width: 50%;
   padding: 6px;

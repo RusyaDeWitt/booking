@@ -4,6 +4,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import classnames from 'classnames';
 import { Button, Table } from 'react-bootstrap';
 
+
 import { Matchs } from '../api/matchs.js';
 // Team component - represents a single todo item
 class Match extends Component {
@@ -39,11 +40,17 @@ class Match extends Component {
     return (
             <tr>
               <td>{this.props.match.round}</td>
-              <td>({this.props.match.teamOne}) <strong>{this.props.match.scoredOne}</strong> : <strong>{this.props.match.scoredTwo}</strong> ({this.props.match.teamTwo})</td>
+              <td>{this.props.match.time}</td>
+              <td><strong>{this.props.match.day}</strong></td>
+              <td><strong>{this.props.match.scoredOne}</strong></td>
+              <td><strong>{this.props.match.scoredTwo}</strong></td>
               <td>
+                { this.props.currentUser ?
                 <Button bsStyle="danger" className="delete" onClick={this.deleteThisMatch.bind(this)}>
                   &times;
                 </Button>
+                : ''
+              }
               </td>
             </tr>
     );

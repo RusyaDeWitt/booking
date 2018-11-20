@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Matchs } from '../api/matchs.js';
 import Match from './Match.js';
 import Navigation from './Navigation';
-import Datepicker from './datepicker'
+
 
 
 class MatchInput extends Component {
@@ -17,9 +17,15 @@ class MatchInput extends Component {
 
     this.state = {
       hideCompleted: false,
-      selectedOptionRounds: "Select round",
+      selectedOptionRounds: "Select Place",
+      selectedOptionTimes: "Select Time",
     }
   };
+
+
+  handleSelectTime(event) {
+    this.setState({ selectedOptionTimes: event });
+  }
 
   handleSelectRound(event) {
     this.setState({ selectedOptionRounds: event });
@@ -30,14 +36,17 @@ class MatchInput extends Component {
     // Find the text field via the React ref
     const scoredOne = ReactDOM.findDOMNode(this.refs.ScoredOne).value.trim();
     const scoredTwo = ReactDOM.findDOMNode(this.refs.ScoredTwo).value.trim();
+    const day = ReactDOM.findDOMNode(this.refs.Day).value.trim();
 
     const round = this.state.selectedOptionRounds;
+    const time = this.state.selectedOptionTimes;
 
-    Meteor.call('matchs.insert', scoredOne , scoredTwo, round);
+    Meteor.call('matchs.insert', scoredOne , scoredTwo, round, time , day);
 
     // Clear form
  ReactDOM.findDOMNode(this.refs.ScoredOne).value = '';
  ReactDOM.findDOMNode(this.refs.ScoredTwo).value= '';
+ ReactDOM.findDOMNode(this.refs.Day).value ='';
 }
 
   toggleHideCompleted() {
@@ -76,60 +85,86 @@ class MatchInput extends Component {
         <Grid>
           <Row>
             <Col md={12}>
-              { this.props.currentUser ?
+            { this.props.currentUser ?
               <div className="TeamAllForms">
                 <center>
-                  <h1>Add Match</h1>
-                   <Datepicker />
+                  <h1>Reserve</h1>
+
                     <div className="dropdown-round">
-                    <h4>Select Round</h4>
+                    <h4>Select Place</h4>
                      <DropdownButton className="dropdownbutton-team1"
                           title={this.state.selectedOptionRounds}
                           id="document-type"
                           onSelect={this.handleSelectRound.bind(this)}
                         >
-                            <MenuItem eventKey={'First Round'}>
-                              First Round
+                            <MenuItem eventKey={'Pool'}>
+                              Pool
                             </MenuItem>
-                            <MenuItem eventKey={'Second Round'}>
-                              Second Round
+                            <MenuItem eventKey={'Football'}>
+                              Football
                             </MenuItem>
-                              <MenuItem eventKey={'Third Round'}>
-                              Third Round
-                            </MenuItem>
-                              <MenuItem eventKey={'Quarter-final'}>
-                              Quarter-final
-                            </MenuItem>
-                              <MenuItem eventKey={'Semi-final'}>
-                                Semi-final
-                            </MenuItem>
-                              <MenuItem eventKey={'Final'}>
-                                Final
+                              <MenuItem eventKey={'Basketball'}>
+                              Basketball
                             </MenuItem>
                         </DropdownButton>
                         </div>
 
+
+                        <div className="dropdown-round">
+                        <h4>Select Time</h4>
+                         <DropdownButton className="dropdownbutton-team1"
+                              title={this.state.selectedOptionTimes}
+                              id="document-type"
+                              onSelect={this.handleSelectTime.bind(this)}
+                            >
+                                <MenuItem eventKey={'14:30'}>
+                                  14:30
+                                </MenuItem>
+                                <MenuItem eventKey={'16:50'}>
+                                  16:50
+                                </MenuItem>
+                                  <MenuItem eventKey={'25:20'}>
+                                  25:20
+                                </MenuItem>
+                            </DropdownButton>
+                            </div>
+
+                            <div className="dropdown-team1">
+                              <h4>Date (Day/Month/Year)</h4>
+                                <p></p>
+                                <form>
+                                  <input className="input-TeamOne"
+                                    type="text"
+                                    ref="Day"
+                                    placeholder=" "
+                                    align="left"
+                                  />
+                                </form>
+                            </div>
+
+
+
                     <div className="dropdown-team1">
-                      <h4>First Team</h4>
+                      <h4>Name and Surname</h4>
                         <p></p>
                         <form>
                           <input className="input-TeamOne"
                             type="text"
                             ref="ScoredOne"
-                            placeholder="First Teams Score"
+                            placeholder=" "
                             align="left"
                           />
                         </form>
                     </div>
 
                     <div className="dropdown-team2">
-                      <h4>Second Team</h4>
+                      <h4>Phone Number</h4>
                         <p></p>
                         <form>
                           <input className="input-TeamTwo"
                             type="text"
                             ref="ScoredTwo"
-                            placeholder= "Second Teams Score"
+                            placeholder= " "
                             align="right"
                           />
                         </form>
@@ -138,15 +173,17 @@ class MatchInput extends Component {
                     <Button bsStyle="warning" className="dropdown-submit-button" onClick={this.OnehandleSubmit.bind(this)}>Confirm & Submit</Button>
                 </center>
                 <p></p>
-              </div> : '' }
-
+              </div>
+              : '' }
             <p></p>
-            { this.props.currentUser ?
             <Table bordered condensed>
               <thead>
                 <tr>
-                  <td><strong>Round</strong></td>
-                  <td><strong>team1/team2</strong></td>
+                  <td><strong>Place</strong></td>
+                  <td><strong>Time</strong></td>
+                  <td><strong>Day</strong></td>
+                  <td><strong>Name and Surname</strong></td>
+                  <td><strong>Phone Number</strong></td>
                   <td><strong> EDIT </strong></td>
                 </tr>
               </thead>
@@ -154,13 +191,6 @@ class MatchInput extends Component {
                   {this.renderMatchs()}
               </tbody>
             </Table>
-              :
-              <span>
-              <center>
-              <h2 className="authText">Authorize to view this page</h2>
-              </center>
-              </span>
-            }
           </Col>
         </Row>
       </Grid>

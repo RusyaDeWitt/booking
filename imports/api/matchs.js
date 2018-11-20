@@ -18,10 +18,12 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'matchs.insert'(scoredOne, scoredTwo, round) {
+  'matchs.insert'(scoredOne, scoredTwo, round , time , day) {
     check(scoredOne, String);
     check(scoredTwo, String);
     check(round , String);
+    check(time , String);
+    check(day , String)
 
 
     // Make sure the user is logged in before inserting a tmatch
@@ -33,6 +35,8 @@ Meteor.methods({
       scoredOne,
       scoredTwo,
       round,
+      time,
+      day,
       createdAt: new Date(),
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username,
