@@ -20,41 +20,6 @@ body {
 
 
 /* CSS added to textInput page */
-.StudentAllForms {
-  border: double red;
-}
-.input-Surname {
-  width: 50%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-.input-Name {
-  width: 50%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-.input-Grade {
-  width: 50%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-.input-Team {
-  width: 50%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-.textInput-submit-button{
-  width: 50%;
-}
-
 
 
 .input-TeamName {

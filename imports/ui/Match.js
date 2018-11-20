@@ -40,8 +40,8 @@ class Match extends Component {
     return (
             <tr>
               <td>{this.props.match.round}</td>
-              <td>{this.props.match.time}</td>
-              <td><strong>{this.props.match.day}</strong></td>
+              <td><strong>{this.props.match.time}-{this.props.match.day}</strong></td>
+              <td><strong>{this.props.match.timeTwo}</strong></td>
               <td><strong>{this.props.match.scoredOne}</strong></td>
               <td><strong>{this.props.match.scoredTwo}</strong></td>
               <td>

@@ -19,9 +19,13 @@ class MatchInput extends Component {
       hideCompleted: false,
       selectedOptionRounds: "Select Place",
       selectedOptionTimes: "Select Time",
+      selectedOptionTimesTwo: "Select Time",
     }
   };
 
+  handleSelectTimeTwo (event) {
+    this.setState({ selectedOptionTimesTwo: event });
+  }
 
   handleSelectTime(event) {
     this.setState({ selectedOptionTimes: event });
@@ -40,8 +44,9 @@ class MatchInput extends Component {
 
     const round = this.state.selectedOptionRounds;
     const time = this.state.selectedOptionTimes;
+    const timeTwo = this.state.selectedOptionTimesTwo;
 
-    Meteor.call('matchs.insert', scoredOne , scoredTwo, round, time , day);
+    Meteor.call('matchs.insert', scoredOne , scoredTwo, round, time , timeTwo , day);
 
     // Clear form
  ReactDOM.findDOMNode(this.refs.ScoredOne).value = '';
@@ -117,38 +122,209 @@ class MatchInput extends Component {
                               id="document-type"
                               onSelect={this.handleSelectTime.bind(this)}
                             >
+                                <MenuItem eventKey={'9:00'}>
+                                  9:00
+                                </MenuItem>
+                                  <MenuItem eventKey={'9:30'}>
+                                  9:30
+                                </MenuItem>
+                                <MenuItem eventKey={'10:00'}>
+                                  10:00
+                                </MenuItem>
+                                  <MenuItem eventKey={'10:30'}>
+                                  10:30
+                                </MenuItem>
+                                <MenuItem eventKey={'11:00'}>
+                                  11:00
+                                </MenuItem>
+                                <MenuItem eventKey={'11:30'}>
+                                  11:30
+                                </MenuItem>
+                                  <MenuItem eventKey={'12:00'}>
+                                  12:00
+                                </MenuItem>
+                                <MenuItem eventKey={'12:30'}>
+                                  12:30
+                                </MenuItem>
+                                <MenuItem eventKey={'13:00'}>
+                                  13:00
+                                </MenuItem>
+                                  <MenuItem eventKey={'13:30'}>
+                                  13:30
+                                </MenuItem>
+                                <MenuItem eventKey={'14:00'}>
+                                  14:00
+                                </MenuItem>
                                 <MenuItem eventKey={'14:30'}>
                                   14:30
                                 </MenuItem>
-                                <MenuItem eventKey={'16:50'}>
-                                  16:50
+                                  <MenuItem eventKey={'15:00'}>
+                                  15:30
                                 </MenuItem>
-                                  <MenuItem eventKey={'25:20'}>
-                                  25:20
+                                <MenuItem eventKey={'15:30'}>
+                                  15:30
+                                </MenuItem>
+                                <MenuItem eventKey={'16:00'}>
+                                  16:00
+                                </MenuItem>
+                                  <MenuItem eventKey={'16:30'}>
+                                  16:30
+                                </MenuItem>
+                                <MenuItem eventKey={'17:00'}>
+                                  17:00
+                                </MenuItem>
+                                <MenuItem eventKey={'17:30'}>
+                                  17:30
+                                </MenuItem>
+                                  <MenuItem eventKey={'18:00'}>
+                                  18:00
+                                </MenuItem>
+                                <MenuItem eventKey={'18:30'}>
+                                  18:30
+                                </MenuItem>
+                                <MenuItem eventKey={'19:00'}>
+                                  19:00
+                                </MenuItem>
+                                  <MenuItem eventKey={'19:30'}>
+                                  19:30
+                                </MenuItem>
+                                <MenuItem eventKey={'20:00'}>
+                                  20:00
+                                </MenuItem>
+                                <MenuItem eventKey={'20:30'}>
+                                  20:30
+                                </MenuItem>
+                                  <MenuItem eventKey={'21:00'}>
+                                  21:00
+                                </MenuItem>
+                                <MenuItem eventKey={'21:30'}>
+                                  21:30
+                                </MenuItem>
+                                <MenuItem eventKey={'22:00'}>
+                                  22:00
+                                </MenuItem>
+                                  <MenuItem eventKey={'22:30'}>
+                                  22:30
+                                </MenuItem>
+                                <MenuItem eventKey={'23:00'}>
+                                  23:00
+                                </MenuItem>
+                                <MenuItem eventKey={'23:30'}>
+                                  23:30
+                                </MenuItem>
+                                  <MenuItem eventKey={'00:00'}>
+                                  00:00
                                 </MenuItem>
                             </DropdownButton>
                             </div>
 
-                            <div className="dropdown-team1">
-                              <h4>Date (Day/Month/Year)</h4>
-                                <p></p>
-                                <form>
-                                  <input className="input-TeamOne"
-                                    type="text"
-                                    ref="Day"
-                                    placeholder=" "
-                                    align="left"
-                                  />
-                                </form>
-                            </div>
-
-
-
+                            <div className="dropdown-round">
+                             <DropdownButton className="dropdownbutton-team1"
+                                  title={this.state.selectedOptionTimesTwo}
+                                  id="document-type"
+                                  onSelect={this.handleSelectTimeTwo.bind(this)}
+                                >
+                                    <MenuItem eventKey={'9:00'}>
+                                      9:00
+                                    </MenuItem>
+                                      <MenuItem eventKey={'9:30'}>
+                                      9:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'10:00'}>
+                                      10:00
+                                    </MenuItem>
+                                      <MenuItem eventKey={'10:30'}>
+                                      10:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'11:00'}>
+                                      11:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'11:30'}>
+                                      11:30
+                                    </MenuItem>
+                                      <MenuItem eventKey={'12:00'}>
+                                      12:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'12:30'}>
+                                      12:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'13:00'}>
+                                      13:00
+                                    </MenuItem>
+                                      <MenuItem eventKey={'13:30'}>
+                                      13:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'14:00'}>
+                                      14:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'14:30'}>
+                                      14:30
+                                    </MenuItem>
+                                      <MenuItem eventKey={'15:00'}>
+                                      15:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'15:30'}>
+                                      15:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'16:00'}>
+                                      16:00
+                                    </MenuItem>
+                                      <MenuItem eventKey={'16:30'}>
+                                      16:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'17:00'}>
+                                      17:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'17:30'}>
+                                      17:30
+                                    </MenuItem>
+                                      <MenuItem eventKey={'18:00'}>
+                                      18:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'18:30'}>
+                                      18:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'19:00'}>
+                                      19:00
+                                    </MenuItem>
+                                      <MenuItem eventKey={'19:30'}>
+                                      19:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'20:00'}>
+                                      20:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'20:30'}>
+                                      20:30
+                                    </MenuItem>
+                                      <MenuItem eventKey={'21:00'}>
+                                      21:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'21:30'}>
+                                      21:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'22:00'}>
+                                      22:00
+                                    </MenuItem>
+                                      <MenuItem eventKey={'22:30'}>
+                                      22:30
+                                    </MenuItem>
+                                    <MenuItem eventKey={'23:00'}>
+                                      23:00
+                                    </MenuItem>
+                                    <MenuItem eventKey={'23:30'}>
+                                      23:30
+                                    </MenuItem>
+                                      <MenuItem eventKey={'00:00'}>
+                                      00:00
+                                    </MenuItem>
+                                </DropdownButton>
+                                </div>
+                      <p></p>
                     <div className="dropdown-team1">
                       <h4>Name and Surname</h4>
                         <p></p>
                         <form>
-                          <input className="input-TeamOne"
+                          <input className="input"
                             type="text"
                             ref="ScoredOne"
                             placeholder=" "
@@ -161,11 +337,23 @@ class MatchInput extends Component {
                       <h4>Phone Number</h4>
                         <p></p>
                         <form>
-                          <input className="input-TeamTwo"
+                          <input className="input"
                             type="text"
                             ref="ScoredTwo"
                             placeholder= " "
                             align="right"
+                          />
+                        </form>
+                    </div>
+                    <div className="dropdown-team1">
+                      <h4>Date (Day/Month/Year)</h4>
+                        <p></p>
+                        <form>
+                          <input className="input"
+                            type="text"
+                            ref="Day"
+                            placeholder=" "
+                            align="left"
                           />
                         </form>
                     </div>
