@@ -3,11 +3,9 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import classnames from 'classnames';
 import { Button, Table } from 'react-bootstrap';
+import { Matchs } from '../../api/matchs/matchs.js';
 
-
-import { Matchs } from '../api/matchs.js';
-// Team component - represents a single todo item
-class Match extends Component {
+class MatchPublic extends Component {
 
   constructor(props) {
     super(props);
@@ -66,4 +64,4 @@ export default withTracker(() => {
     incompleteCount: Matchs.find({ checked: { $ne: false } }).count(),
     currentUser: Meteor.user(),
   };
-})(Match)
+})(MatchPublic)

@@ -5,13 +5,13 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem, Table, DropdownButton } from 'react-bootstrap';
 import { Button , Grid, Row, Col, Clearfix} from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Matchs } from '../api/matchs.js';
-import Match from './Match.js';
-import Navigation from './Navigation';
+import { Matchs } from '../../api/matchs/matchs.js';
+import Match from './MatchPublic.js';
+import Navigation from '../Navigation/Navigation';
 
 
 
-class MatchInput extends Component {
+class MatchInputPublic extends Component {
   constructor(props) {
     super(props);
 
@@ -90,7 +90,6 @@ class MatchInput extends Component {
         <Grid>
           <Row>
             <Col md={12}>
-            { this.props.currentUser ?
               <div className="TeamAllForms">
                 <center>
                   <h1>Reserve</h1>
@@ -358,11 +357,10 @@ class MatchInput extends Component {
                         </form>
                     </div>
                     <p></p>
-                    <Button bsStyle="warning" className="dropdown-submit-button" onClick={this.OnehandleSubmit.bind(this)}>Confirm & Submit</Button>
+                    <Button bsStyle="warning" className="dropdown-submit-button" onClick={this.OnehandleSubmit.bind(this)}>Отправить запрос</Button>
                 </center>
                 <p></p>
               </div>
-              : '' }
             <p></p>
             <Table bordered condensed>
               <thead>
@@ -372,7 +370,6 @@ class MatchInput extends Component {
                   <td><strong>Day</strong></td>
                   <td><strong>Name and Surname</strong></td>
                   <td><strong>Phone Number</strong></td>
-                  <td><strong> EDIT </strong></td>
                 </tr>
               </thead>
               <tbody>
@@ -397,4 +394,4 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 
-})(MatchInput);
+})(MatchInputPublic);

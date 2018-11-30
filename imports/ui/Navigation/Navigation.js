@@ -7,26 +7,34 @@ import { Button , Grid, Row, Col, Clearfix} from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { LinkContainer } from 'react-router-bootstrap';
 
-import AccountsUIWrapper from './AccountsUIWrapper.js';
+
+import '../../startup/Accounts-config/accounts-config'
+import LoggedNavigation from '../LoggedNavigation/LoggedNavigation';
+import PublicNavigation from '../PublicNavigation/PublicNavigation';
+import Matchs from '../../api/matchs/matchs';
+import AccountsUIWrapper from '../AccountsUIWrapper/AccountsUIWrapper.js';
 import './Navigation.css';
 
-const Navigation = () => (
+class Navigation extends Component {
+  render(){
+    return(
   <Navbar>
   <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/" className="Project">Book</Link>
+        <Link to="/" className="Project">HomePage</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-      <Nav pullRight className="nav_right">
-        <NavItem eventKey={1}>
-          <AccountsUIWrapper />
-        </NavItem>
-        <NavItem eventKey={2} >
-        </NavItem>
-      </Nav>
+    { this.props.currentUser ? <LoggedNavigation/> : <PublicNavigation/> }
     </Navbar.Collapse>
   </Navbar>
-)
-export default Navigation
+);
+};
+};
+export default withTracker(() => {
+  Meteor.subscribe('matchs');
+  return {
+    currentUser: Meteor.user(),
+  };
+})(Navigation);
