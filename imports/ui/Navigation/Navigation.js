@@ -21,12 +21,12 @@ class Navigation extends Component {
   <Navbar>
   <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/" className="Project">HomePage</Link>
+        <Link to="/" className="Project">Расписание</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-    { this.props.currentUser ? <LoggedNavigation/> : <PublicNavigation/> }
+     <PublicNavigation/>
     </Navbar.Collapse>
   </Navbar>
 );

@@ -37,19 +37,17 @@ class MatchPublic extends Component {
 
     return (
             <tr>
-              <td>{this.props.match.round}</td>
+              <td><strong>{this.props.match.round}</strong></td>
               <td><strong>{this.props.match.time}-{this.props.match.day}</strong></td>
               <td><strong>{this.props.match.timeTwo}</strong></td>
               <td><strong>{this.props.match.scoredOne}</strong></td>
               <td><strong>{this.props.match.scoredTwo}</strong></td>
-              <td>
                 { this.props.currentUser ?
                 <Button bsStyle="danger" className="delete" onClick={this.deleteThisMatch.bind(this)}>
                   &times;
                 </Button>
                 : ''
               }
-              </td>
             </tr>
     );
   }

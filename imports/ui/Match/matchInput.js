@@ -17,9 +17,9 @@ class MatchInput extends Component {
 
     this.state = {
       hideCompleted: false,
-      selectedOptionRounds: "Select Place",
-      selectedOptionTimes: "Select Time",
-      selectedOptionTimesTwo: "Select Time",
+      selectedOptionRounds: "Выбрать место",
+      selectedOptionTimes: "Выбрать время",
+      selectedOptionTimesTwo: "Выбрать время",
     }
   };
 
@@ -93,31 +93,34 @@ class MatchInput extends Component {
             { this.props.currentUser ?
               <div className="TeamAllForms">
                 <center>
-                  <h1>Reserve</h1>
+                  <h1>Забронировать</h1>
 
-                    <div className="dropdown-round">
-                    <h4>Select Place</h4>
-                     <DropdownButton className="dropdownbutton-team1"
+                    <div className="dropdown-time">
+                    <h4>Выбрать место</h4>
+                     <DropdownButton className="dropdownbutton-time"
                           title={this.state.selectedOptionRounds}
                           id="document-type"
                           onSelect={this.handleSelectRound.bind(this)}
                         >
-                            <MenuItem eventKey={'Pool'}>
-                              Pool
+                            <MenuItem eventKey={'Бассейн'}>
+                              Бассейн
                             </MenuItem>
-                            <MenuItem eventKey={'Football'}>
-                              Football
+                            <MenuItem eventKey={'Футзал'}>
+                              Футзал
                             </MenuItem>
-                              <MenuItem eventKey={'Basketball'}>
-                              Basketball
+                              <MenuItem eventKey={'Баскетбол'}>
+                              Баскетбол
                             </MenuItem>
+                            <MenuItem eventKey={'Спортзал'}>
+                            Спортзал
+                          </MenuItem>
                         </DropdownButton>
                         </div>
 
 
-                        <div className="dropdown-round">
-                        <h4>Select Time</h4>
-                         <DropdownButton className="dropdownbutton-team1"
+                        <div className="dropdown-time">
+                        <h4>Выбрать время</h4>
+                         <DropdownButton className="dropdownbutton-time"
                               title={this.state.selectedOptionTimes}
                               id="document-type"
                               onSelect={this.handleSelectTime.bind(this)}
@@ -218,8 +221,8 @@ class MatchInput extends Component {
                             </DropdownButton>
                             </div>
 
-                            <div className="dropdown-round">
-                             <DropdownButton className="dropdownbutton-team1"
+                            <div className="dropdown-time">
+                             <DropdownButton className="dropdownbutton-time"
                                   title={this.state.selectedOptionTimesTwo}
                                   id="document-type"
                                   onSelect={this.handleSelectTimeTwo.bind(this)}
@@ -321,7 +324,7 @@ class MatchInput extends Component {
                                 </div>
                       <p></p>
                     <div className="dropdown-team1">
-                      <h4>Name and Surname</h4>
+                      <h4>Фамилия и Имя</h4>
                         <p></p>
                         <form>
                           <input className="input"
@@ -334,7 +337,7 @@ class MatchInput extends Component {
                     </div>
 
                     <div className="dropdown-team2">
-                      <h4>Phone Number</h4>
+                      <h4>Номер телефона</h4>
                         <p></p>
                         <form>
                           <input className="input"
@@ -346,7 +349,7 @@ class MatchInput extends Component {
                         </form>
                     </div>
                     <div className="dropdown-team1">
-                      <h4>Date (Day/Month/Year)</h4>
+                      <h4>Дата (день/месяц/год)</h4>
                         <p></p>
                         <form>
                           <input className="input"
@@ -367,12 +370,12 @@ class MatchInput extends Component {
             <Table bordered condensed>
               <thead>
                 <tr>
-                  <td><strong>Place</strong></td>
-                  <td><strong>Time</strong></td>
-                  <td><strong>Day</strong></td>
-                  <td><strong>Name and Surname</strong></td>
-                  <td><strong>Phone Number</strong></td>
-                  <td><strong> EDIT </strong></td>
+                  <td><strong>Место</strong></td>
+                  <td><strong>Время</strong></td>
+                  <td><strong>День</strong></td>
+                  <td><strong>Фамилия и Имя</strong></td>
+                  <td><strong>Номер Телефона</strong></td>
+                  <td><strong> Настроить </strong></td>
                 </tr>
               </thead>
               <tbody>
