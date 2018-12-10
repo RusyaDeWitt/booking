@@ -327,7 +327,7 @@ class MatchInputPublic extends Component {
                           <input className="input"
                             type="text"
                             ref="ScoredOne"
-                            placeholder=" "
+                            placeholder="Введите Фамилию и Имя"
                             align="left"
                           />
                         </form>
@@ -338,9 +338,9 @@ class MatchInputPublic extends Component {
                         <p></p>
                         <form>
                           <input className="input"
-                            type="text"
+                            type="number"
                             ref="ScoredTwo"
-                            placeholder= " "
+                            placeholder= "Введите Номер Телефона"
                             align="right"
                           />
                         </form>
@@ -352,7 +352,7 @@ class MatchInputPublic extends Component {
                           <input className="input"
                             type="text"
                             ref="Day"
-                            placeholder=" "
+                            placeholder="Введите Дату"
                             align="left"
                           />
                         </form>
