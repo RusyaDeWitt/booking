@@ -331,7 +331,7 @@ class MatchInput extends Component {
                             type="text"
                             ref="ScoredOne"
                             placeholder=" "
-                            align="left"
+                            align="center"
                           />
                         </form>
                     </div>
@@ -341,7 +341,7 @@ class MatchInput extends Component {
                         <p></p>
                         <form>
                           <input className="input"
-                            type="text"
+                            type="tel"
                             ref="ScoredTwo"
                             placeholder= " "
                             align="right"
@@ -372,7 +372,7 @@ class MatchInput extends Component {
                 <tr>
                   <td><strong>Место</strong></td>
                   <td><strong>Время</strong></td>
-                  <td><strong>День</strong></td>
+                  <td><strong>Дата</strong></td>
                   <td><strong>Фамилия и Имя</strong></td>
                   <td><strong>Номер Телефона</strong></td>
                   <td><strong> Настроить </strong></td>

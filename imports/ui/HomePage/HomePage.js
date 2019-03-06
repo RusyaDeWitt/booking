@@ -63,11 +63,11 @@ class HomePage extends Component {
                 <Table bordered condensed>
                   <thead>
                     <tr>
-                      <td><strong>Place</strong></td>
-                      <td><strong>Time</strong></td>
-                      <td><strong>Day</strong></td>
-                      <td><strong>Name and Surname</strong></td>
-                      <td><strong>Phone Number</strong></td>
+                      <td><strong>Место</strong></td>
+                      <td><strong>Время</strong></td>
+                      <td><strong>День</strong></td>
+                      <td><strong>Имя и Фамилия</strong></td>
+                      <td><strong>Номер телефона</strong></td>
                     </tr>
                   </thead>
                   <tbody>

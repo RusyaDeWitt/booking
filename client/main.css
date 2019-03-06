@@ -1,18 +1,26 @@
 .dropdown-time {
   display: inline-block;
 }
-.input{
-  font-style: italic;
-	padding: 0px 0px 0px 0px;
-	background: transparent;
-	outline: none;
-	border: none;
-	border-bottom: 1px dashed #83A4C5;
-	width: 275px;
-	overflow: hidden;
-	resize:none;
-	height:20px;
+.BlockOne{
+  display: grid;
+  width: 850%
 }
-body{
-  background-color: #2A3132;
+
+.BlockTwo{
+  display:grid;
+  width: 50%
+}
+
+.BigBlock{
+  display: grid;
+  grid-template-columns: repeat(3,10%)
+}
+input{
+  width: 15%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
