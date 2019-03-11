@@ -367,7 +367,7 @@ class MatchInput extends Component {
               </div>
               : '' }
             <p></p>
-            <Table bordered condensed>
+            <Table striped bordered hover>
               <thead>
                 <tr>
                   <td><strong>Место</strong></td>

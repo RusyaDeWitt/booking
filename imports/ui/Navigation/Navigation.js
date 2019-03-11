@@ -18,7 +18,9 @@ import './Navigation.css';
 class Navigation extends Component {
   render(){
     return(
+
   <Navbar>
+  <Grid>
   <Navbar.Header>
       <Navbar.Brand>
         <Link to="/" className="Project">Расписание</Link>
@@ -28,7 +30,9 @@ class Navigation extends Component {
     <Navbar.Collapse>
      <PublicNavigation/>
     </Navbar.Collapse>
+  </Grid>
   </Navbar>
+
 );
 };
 };

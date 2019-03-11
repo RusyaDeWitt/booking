@@ -89,12 +89,12 @@ class MatchInputPublic extends Component {
       <div>
         <Grid>
           <Row>
-            <Col md={12}>
+            <Col md={15}>
               <div className="TeamAllForms">
                   <h1>Забронировать</h1>
                       <p></p>
               <div className="BigBlock">
-              
+
                   <div className="BlockOne">
                     <div className="dropdown-team1">
                       <h4>Фамилия и Имя</h4>
@@ -114,7 +114,7 @@ class MatchInputPublic extends Component {
                         <p></p>
                         <form>
                           <input className="input"
-                            type="tel"
+                            type="number"
                             ref="ScoredTwo"
                             placeholder= " "
                             align="right"
@@ -133,6 +133,8 @@ class MatchInputPublic extends Component {
                           />
                         </form>
                     </div>
+                    <p></p>
+                    <Button bsStyle="success" className="dropdown-submit-button" onClick={this.OnehandleSubmit.bind(this)}>Отправить запрос</Button>
                   </div>
                     <p></p>
 
@@ -340,7 +342,9 @@ class MatchInputPublic extends Component {
                             </MenuItem>
                         </DropdownButton>
                         </div>
+                      </div>
 
+                      <div className="BlockThree">
                         <div className="dropdown-place">
                         <h4>Выбрать место</h4>
                          <DropdownButton className="dropdownbutton-team1"
@@ -363,7 +367,6 @@ class MatchInputPublic extends Component {
                             </DropdownButton>
                             </div>
                             <p></p>
-                            <Button bsStyle="success" className="dropdown-submit-button" onClick={this.OnehandleSubmit.bind(this)}>Отправить запрос</Button>
                     </div>
                 </div>
                 <p></p>
@@ -371,7 +374,7 @@ class MatchInputPublic extends Component {
             <p></p>
             <p></p>
             <p></p>
-            <Table bordered condensed className="Table-Head">
+            <Table striped bordered hover className="Table-Head">
               <thead>
                 <tr>
                   <td><strong>Место</strong></td>
@@ -388,9 +391,7 @@ class MatchInputPublic extends Component {
           </Col>
         </Row>
       </Grid>
-
     </div>
-
     );
   }
 }
